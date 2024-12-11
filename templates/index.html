@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie and Director Management</title>
+</head>
+<body>
+    <h1>Movie and Director Management</h1>
+    <button onclick="location.href='/add_director'">Add Director</button>
+    <button onclick="location.href='/add_movie'">Add Movie</button>
+
+    <h2>Directors</h2>
+    <ul>
+        {% for director in directors %}
+            <li>
+                {{ director['name'] }} - 
+                <a href="/update_director/{{ director['_id'] }}">Update</a> | 
+                <a href="/delete_director/{{ director['_id'] }}">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <h2>Movies</h2>
+    <ul>
+        {% for movie in movies %}
+            <li>
+                {{ movie['title'] }} (Director ID: {{ movie['director_id'] }}) - 
+                <a href="/update_movie/{{ movie['_id'] }}">Update</a> | 
+                <a href="/delete_movie/{{ movie['_id'] }}">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
