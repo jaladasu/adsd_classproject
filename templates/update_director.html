@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Director</title>
+</head>
+<body>
+    <h1>Update Director</h1>
+    <form action="/update_director/{{ director['_id'] }}" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="{{ director['name'] }}" required>
+        <button type="submit">Update Director</button>
+    </form>
+    <button onclick="location.href='/'">Back to Home</button>
+</body>
+</html>
